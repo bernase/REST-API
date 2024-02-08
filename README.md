@@ -7,6 +7,6 @@ For development documents please see docs_dev.md
 
 Technologies used:
 
-<img src="https://github.com/bernase/REST-API/images/c-sharp.png" alt="C#" width="100" height="100">
-<img src="https://github.com/bernase/REST-API/images/NETmvc.png" alt=".NET" width="100" height="100">
-<img src="https://github.com/bernase/REST-API/images/visual-studio-code.png" alt="Visual Studio Code" width="100" height="100">
+<img src="https://github.com/bernase/REST-API/blob/main/Images/c-sharp.png" alt="C#" width="100" height="100">
+<img src="https://github.com/bernase/REST-API/blob/main/Images/NETmvc.png" alt=".NET" width="100" height="100">
+<img src="https://github.com/bernase/REST-API/blob/main/Images/visual-studio-code.png" alt="Visual Studio Code" width="100" height="100">
