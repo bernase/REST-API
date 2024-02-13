@@ -1,24 +1,29 @@
 using Microsoft.AspNetCore.Mvc; 
 using Microsoft.EntityFrameworkCore;
+using REST_API.Models;
 
 public class ApplicationDbContext : DbContext
 {
+    // DbSets
+    public DbSet<User> Users { get; set; }
+    public DbSet<Product> Products { get; set; }
+
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {
     }
 
-    // DbSet for User model
-    public DbSet<User> Users { get; set; }
-
-    // DbSet for Product model
-    public DbSet<Product> Products { get; set; }
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        // Configure the relationship between User and Product
-        modelBuilder.Entity<Product>()
-            .HasOne(p => p.User)
-            .WithMany(u => u.Products)
-            .HasForeignKey(p => p.UserId);
-    }
+        {
+            // Configure your model here using Fluent API if needed
+
+            modelBuilder.Entity<User>()
+                .Property(u => u.UserName)
+                .IsRequired();
+
+            modelBuilder.Entity<Product>()
+                .Property(p => p.Name)
+                .HasMaxLength(255);
+
+            base.OnModelCreating(modelBuilder);
+        }
 }

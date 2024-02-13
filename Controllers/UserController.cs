@@ -72,4 +72,12 @@ namespace REST_API.Controllers
             return tokenHandler.WriteToken(token);
         }
     }
+
+    internal class Logger
+    {
+        internal static void LogInformation(string v)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

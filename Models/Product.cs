@@ -1,5 +1,6 @@
-
-public class Product
+namespace REST_API.Models
+{
+    public class Product
 {
     public int ProductId { get; set; }
     public string Name { get; set; }
@@ -10,4 +11,5 @@ public class Product
 
     // Navigation property
     public User User { get; set; }
+}
 }
