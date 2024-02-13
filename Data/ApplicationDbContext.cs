@@ -1,4 +1,4 @@
-// Data/ApplicationDbContext.cs
+using Microsoft.AspNetCore.Mvc; 
 using Microsoft.EntityFrameworkCore;
 
 public class ApplicationDbContext : DbContext

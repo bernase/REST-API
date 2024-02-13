@@ -1,6 +1,8 @@
-// Startup.cs
+using Microsoft.AspNetCore.Mvc; 
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.DependencyInjection;
 using System.Text;
 
 public class Startup
