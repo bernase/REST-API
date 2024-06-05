@@ -20,7 +20,7 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
-        // Add DbContext configuration here (if you have one)
+        // DbContext configuration
         services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")));
 
