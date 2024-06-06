@@ -4,26 +4,25 @@ using REST_API.Models;
 
 public class ApplicationDbContext : DbContext
 {
-    // DbSets
-    public DbSet<User> Users { get; set; }
-    public DbSet<Product> Products { get; set; }
-
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {
     }
+    
+    public DbSet<User> Users { get; set; }
+    public DbSet<Product> Products { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Configure your model here using Fluent API if needed
+            base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<User>()
-                .Property(u => u.UserName)
-                .IsRequired();
+                .HasMany(u => u.Products)
+                .WithOne(p => p.User)
+                .HasForeignKey(p => p.UserId);
 
-            modelBuilder.Entity<Product>()
-                .Property(p => p.Name)
-                .HasMaxLength(255);
+            //modelBuilder.Entity<Product>()
+            //    .Property(p => p.Name)
+            //    .HasMaxLength(255);
 
-            base.OnModelCreating(modelBuilder);
         }
 }
