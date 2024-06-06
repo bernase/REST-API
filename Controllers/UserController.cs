@@ -12,8 +12,9 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace REST_API.Controllers
 {
+    [Authorize]
     [ApiController]
-    [Route("api/users")]
+    [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
         private readonly UserService _userService;
